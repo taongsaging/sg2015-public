@@ -1,0 +1,58 @@
+<div class = "header">
+  <div class="span2">
+    <img class = "logo" src = "/img/logo.jpg">
+  </div>
+
+  <div class="span10 digits-wrap">
+    <div class="span4"></div>
+    <div class="span6 digits-title">
+      SG2015 by the numbers
+    </div>
+    <div class="span2 digits">
+      <strong ng-bind="projects_count"></strong><br />
+      Projects
+    </div>
+    <!--
+      <div class="span2 digits">
+        <strong>42,415</strong><br />
+        Supporters
+      </div>
+      <div class="span2 digits">
+        <strong>81,534</strong><br />
+        Volunteers
+      </div>
+    -->
+  </div>
+
+  <div class="span10 navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="brand" href="#">Menu</div>
+        <div class="nav-collapse in collapse" style="height: auto;">
+          <ul class="nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="about.php">About Us</a></li>
+            <li><a href="/#/projects.list">Projects</a></li>
+            <li><a href="/#/projects.new">Start</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+          <ul ng-hide="authenticated" class="nav account-links">
+            <li><a href="/#/user.login">Login</a></li>
+            <li><a href="/#/user.register">Register</a></li>
+          </ul>
+          <ul ng-show="authenticated" class="nav account-links">
+            <li><a href="/#/user.profile">My Account</a></li>
+            <li><a ng-click="logout()">Log Out</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+
+  <div class = "clear"></div>
+</div>

@@ -1,0 +1,100 @@
+<div class = " content-heading">
+  <div class = "media-heading"><h2 ng-bind="project.name"></h2></div>
+</div>
+
+<div class = "media">
+
+  <div class = "span4 sidebar">
+    <div class = "media-details">
+      <h3>Event Details</h3>
+      <div class= "date">Execution Date <strong ng-bind="project.execution_date | date"> </strong></div>
+      <div class = "created">Created By <strong ng-bind-template="{{project.organizer.first_name}} {{ project.organizer.last_name }}"></strong></div>
+      <a ng-show="participated" style="background-color: green">You have participated</a>
+      <a ng-click="participate()" ng-hide="participated">I Want to Participate</a>
+    </div>
+    <div class = "related">
+      <h3 >Related projects</h3>
+      <div class = "project">
+        <div class = "project-box">
+          <iframe width="274" height="159" src="http://www.youtube.com/embed/Wt0CTlfjh2Q" frameborder="0" allowfullscreen></iframe>
+          <h3>A Day Without Borders</h3>
+          <div class = "span6 no-margin"><a class = "support" href = "#">Support</a></div>
+          <div class = "span6"><a class = "volunteer" href = "#">Volunteer</a></div>
+          <div class = "clear"></div>
+        </div>
+        <div class = "project-box">
+          <iframe width="274" height="159" src="http://www.youtube.com/embed/nf535Vvhd_4" frameborder="0" allowfullscreen></iframe>
+          <h3>Bonding with Borders</h3>
+          <div class = "span6 no-margin"><a class = "support" href = "#">Support</a></div>
+          <div class = "span6"><a class = "volunteer" href = "#">Volunteer</a></div>
+          <div class = "clear"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class = "span8 text-content">
+    <iframe width="600" height="480" src = "//www.youtube.com/embed/{{ project.youtube_vid }}"  frameborder="0" allowfullscreen></iframe>
+    <h3 class = "text-heading">People behind this project</h3>
+    <div ng-bind="project.people_behind"></div>
+    <div ng-hide="project.organization_logo == null">
+      <h3>Our Logo</h3>
+      <img style="max-height: 200px;" ng-src="{{ project.organization_logo }}">
+    </div>
+    <h3 class = "text-heading">Objectives</h3>
+    <div>
+      <legend>First Objective</legend>
+      <h4 ng-bind="project.first_objective.name"></h4>
+      <p ng-bind="project.first_objective_reason"></p>
+    </div>
+    <div ng-hide="project.second_objective_id == null">
+      <legend>Second Objective</legend>
+      <h4 ng-bind="project.second_objective.name"></h4>
+      <p ng-bind="project.second_objective_reason"></p>
+    </div>
+    <div ng-hide="project.third_objective_id == null">
+      <legend>Third Objective</legend>
+      <h4 ng-bind="project.third_objective.name"></h4>
+      <p ng-bind="project.third_objective_reason"></p>
+    </div>
+
+    <div>
+      <div class="span2" ng-repeat="photo in project.project_photos">
+        <img style="max-height: 200px" ng-src="{{ photo.url }}"/>
+      </div>
+    </div>
+
+    <h3 class = "text-heading">What does it hope to accomplish?</h3>
+    <div ng-bind="project.what_to_accomplish"></div>
+    <h3 class = "text-heading">How will you accomplish it?</h3>
+    <div ng-bind="project.how_to_accomplish"></div>
+    <h3 class = "text-heading">When will you know you have accomplished it?</h3>
+    <div ng-bind="project.when_to_accomplish"></div>
+    <h3 class = "text-heading">Projected Milestones</h3>
+    <legend>Current Number of Volunteers</legend>
+    <div ng-bind="project.current_volunteers"></div>
+    <legend>Target Number of Volunteers</legend>
+    <div ng-bind="project.target_volunteers"></div>
+    <div ng-hide="project.youtube_channel == '' || project.youtube_channel == null">
+      <h3 class = "text-heading">YouTube Channel</h3>
+      <div ng-bind="project.youtube_channel"></div>
+    </div>
+    <div>
+      <h3 class = "text-heading">Why should Singaporeans support this project?</h3>
+      <div ng-bind="project.why_support"></div>
+    </div>
+    <div>
+      <h3 class = "text-heading">What do you need most to fulfil your objectives?</h3>
+      <div ng-show="project.seek_financial_support">Seek Financial Support</div>
+      <div ng-show="project.seek_government_support">Seek Government Support</div>
+      <div ng-show="project.seek_society_support">Seek Society Support</div>
+      <div ng-show="project.seek_volunteer_support">Seek Volunteer Support</div>
+    </div>
+    <div>
+      <h3 class = "text-heading">Progress of the Project</h3>
+      <div ng-bind="project.progress_blog"></div>
+    </div>
+  </div>
+
+  <div class = "clear"></div>
+</div>
